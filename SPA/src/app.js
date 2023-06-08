@@ -7,6 +7,7 @@ export default function App({ $target }) {
   this.route = () => {
     const { pathname } = location;
 
+    /**페이지 라우팅 할때마다 기존 페이지 미쳤냐 */
     $target.innerHTML = "";
 
     if (pathname === "/web/") {
@@ -19,7 +20,6 @@ export default function App({ $target }) {
       }).render();
     } else if (pathname === "/web/cart") {
       new CartPage({ $target }).render();
-      console.log(123);
     }
   };
 
