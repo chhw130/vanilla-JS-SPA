@@ -13,7 +13,6 @@ export default function ProductList({ $page }) {
     if (!this.state) {
       return;
     }
-    console.log(this.state);
     const productList = this.state
       .map((data) => {
         return `<div>${data.id}</div>

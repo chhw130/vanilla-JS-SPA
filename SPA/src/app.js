@@ -23,6 +23,8 @@ export default function App({ $target }) {
     }
   };
 
+  /**라우팅 초기화 해주기 */
   init(this.route);
+
   this.route();
 }
