@@ -19,6 +19,7 @@ export default function App({ $target }) {
       }).render();
     } else if (pathname === "/web/cart") {
       new CartPage({ $target }).render();
+      console.log(123);
     }
   };
 
