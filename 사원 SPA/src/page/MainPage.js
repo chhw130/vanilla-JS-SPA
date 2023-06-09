@@ -3,11 +3,7 @@ export default function MainPage({ $target }) {
 
   $target.appendChild($page);
 
-  $page.innerHTML = `<div>메인페이지입니다</div>`;
+  $page.innerHTML = `<div id="mainPage">메인페이지입니다</div>`;
 
-  this.render = () => {
-    console.log(1);
-  };
-
-  this.render();
+  this.render = () => {};
 }
