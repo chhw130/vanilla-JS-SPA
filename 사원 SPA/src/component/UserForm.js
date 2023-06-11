@@ -1,11 +1,28 @@
+import { getItem, setItem } from "../util/LocalStorage.js";
+
+const mbtiArr = [
+  "ISTJ",
+  "ISFJ",
+  "INFJ",
+  "INTJ",
+  "ISTP",
+  "ISFP",
+  "INFP",
+  "INTP",
+  "ESTP",
+  "ESFP",
+  "ENFP",
+  "ENTP",
+  "ESTJ",
+  "ESFJ",
+  "ENFJ",
+  "ENTJ",
+];
+
 export default function UserForm({ $page }) {
   const $form = document.createElement("form");
 
   $page.appendChild($form);
-
-  this.setState = (nextState) => {
-    this.state = nextState;
-  };
 
   this.render = () => {
     const template = `
@@ -15,6 +32,10 @@ export default function UserForm({ $page }) {
     <input id="userName"></input>
     <label>생년월일</label>
     <input id="userBirth"></input>
+    <label>mbti</label>
+    <select id="userMbti">
+    ${mbtiArr.map((mbti) => `<option value=${mbti}>${mbti}</option>`)}
+    </select>
     <button>제출하기</button>
     `;
 
@@ -25,6 +46,7 @@ export default function UserForm({ $page }) {
       const userId = e.target.userId.value;
       const userName = e.target.userName.value;
       const userBirth = e.target.userBirth.value;
+      const userMbti = e.target.userMbti.value;
 
       if (!userId || !userName || !userBirth) {
         return alert("필수 정보를 입력하세요!");
@@ -34,16 +56,16 @@ export default function UserForm({ $page }) {
         userId,
         userName,
         userBirth,
+        userMbti,
       };
 
-      const remainData = localStorage.getItem("userInform");
+      const remainData = getItem("userInform");
       if (!remainData) {
-        localStorage.setItem("userInform", JSON.stringify([userData]));
+        setItem("userInform", [userData]);
+        alert("추가 되었습니다.");
       } else {
-        localStorage.setItem("userInform", [
-          ...remainData,
-          JSON.stringify(userData),
-        ]);
+        setItem("userInform", [...remainData, userData]);
+        alert("추가 되었습니다.");
       }
     });
   };
