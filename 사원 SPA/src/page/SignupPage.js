@@ -1,3 +1,5 @@
+import UserForm from "../component/UserForm.js";
+
 export default function SignupPage({ $target }) {
   const $page = document.createElement("div");
 
@@ -5,5 +7,7 @@ export default function SignupPage({ $target }) {
 
   $page.innerHTML = `<div id="signupPage">회원가입페이지</div>`;
 
-  this.render = () => {};
+  this.render = () => {
+    new UserForm({ $page }).render();
+  };
 }

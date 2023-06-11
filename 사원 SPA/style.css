@@ -31,6 +31,37 @@ header {
   padding: 50px;
 }
 
-#mainPage {
+.container {
   padding: 50px;
+}
+
+form {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+form label {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+form input {
+  width: 200px;
+  height: 30px;
+}
+
+form button {
+  width: 100px;
+  margin: 10px auto;
+}
+
+.userInform {
+  width: 200px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
 }

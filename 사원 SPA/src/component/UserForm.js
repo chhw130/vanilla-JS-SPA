@@ -35,7 +35,16 @@ export default function UserForm({ $page }) {
         userName,
         userBirth,
       };
-      console.log(userData);
+
+      const remainData = localStorage.getItem("userInform");
+      if (!remainData) {
+        localStorage.setItem("userInform", JSON.stringify([userData]));
+      } else {
+        localStorage.setItem("userInform", [
+          ...remainData,
+          JSON.stringify(userData),
+        ]);
+      }
     });
   };
 }
