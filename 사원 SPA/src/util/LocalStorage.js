@@ -1,6 +1,8 @@
+const storage = localStorage;
+
 export const getItem = (key) => {
   try {
-    const data = JSON.parse(localStorage.getItem(key));
+    const data = JSON.parse(storage.getItem(key));
     return data;
   } catch (err) {
     console.log(err);
@@ -8,5 +10,9 @@ export const getItem = (key) => {
 };
 
 export const setItem = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
+  try {
+    storage.setItem(key, JSON.stringify(value));
+  } catch (err) {
+    console.log(err);
+  }
 };
