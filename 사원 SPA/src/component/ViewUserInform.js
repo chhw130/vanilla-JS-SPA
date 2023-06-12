@@ -8,7 +8,7 @@ export default function ViewUserInform({ $page }) {
 
   const userData = getItem("userInform");
 
-  // console.log(Object.values(userData));
+  console.log(Object.values(userData));
 
   console.log(userData);
 
