@@ -1,4 +1,4 @@
-import { getItem, setItem } from "../util/LocalStorage.js";
+import { getItem, setItem } from "../../../SPA/util/LocalStorage.js";
 
 const mbtiArr = [
   "ISTJ",

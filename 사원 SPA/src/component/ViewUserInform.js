@@ -1,4 +1,4 @@
-import { getItem } from "../util/LocalStorage.js";
+import { getItem } from "../../../SPA/util/LocalStorage.js";
 
 export default function ViewUserInform({ $page }) {
   const $userInform = document.createElement("div");
